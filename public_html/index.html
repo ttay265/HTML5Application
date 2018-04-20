@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Student Map</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <p>  Total students: <span id="txtTotalStudent"/>
+            </p>
+            <p> Total seats:  <span id="txtTotalSeat"/>
+            </p>
+            <button onclick="refresh()">Refresh</button>
+            <p>
+                Seat Code: <input id="txtSeatCode"/> <button onclick="searchStudentClick()">Search</button>
+            </p>
+            <table id="tblStudentSearchResult" hidden="">
+                <tr>
+                    <th style="text-align: right">Student ID: </th>
+                    <th id="stuId" style="text-align: left"></th>
+                </tr>
+                <tr>
+                    <th style="text-align: right">Student Name: </th>
+                    <th id="stuName" style="text-align: left"></th>
+                </tr>
+                <tr>
+                    <th style="text-align: right">Status: </th>
+                    <th id="stuStatus" style="text-align: left"></th>
+                </tr>
+            </table>
+        </div>
+        <script>
+            var xhttp, xmlDoc;
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    xmlDoc = this.responseXML;
+                    studentCount();
+                    seatCount();
+                }
+            };
+            xhttp.open("GET", "StudentMap.xml", true);
+            xhttp.send();
+
+            function refresh() {
+                studentCount(this);
+                seatCount(this);
+            }
+            function studentCount() {
+                var students = xmlDoc.getElementsByTagName("student");
+                document.getElementById("txtTotalStudent").innerHTML = students.length;
+            }
+
+            function seatCount() {
+                var seats = xmlDoc.getElementsByTagName("seat");
+                document.getElementById("txtTotalSeat").innerHTML = seats.length;
+            }
+            function searchStudentClick() {
+                var a = document.getElementById("txtSeatCode").value;
+                studentBySeatCode(a);
+            }
+            function studentBySeatCode(code) {
+                var row, i, ii, student;
+                //extract row and col
+                var pat = new RegExp("[0-9]+");
+                var seat = pat.exec(code)[0];
+                var row = code.replace(seat, "");
+                var rows = xmlDoc.getElementsByTagName("row");
+                for (i = 0; i < rows.length; i++) {
+                    if (row === rows[i].getAttribute("id")) {
+                        var child = rows[i].children;
+                        for (ii = 0; ii < child.length; ii++) {
+                            if (child[ii].nodeType === 1) {
+                                var aSeat = child[ii];
+                                if (seat === aSeat.getAttribute("id")) {
+                                    student = aSeat.children[0];
+                                }
+                            }
+                        }
+                    }
+                }
+                if (row.length = 0) {
+                    this.alert("No row found!");
+                    return;
+                }
+                if (student) {
+                    document.getElementById("stuId").innerHTML = student.getAttribute("id");
+                    document.getElementById("stuName").innerHTML = student.textContent;
+                    document.getElementById("stuStatus").innerHTML = student.getAttribute("status");
+                    document.getElementById("tblStudentSearchResult").removeAttribute("hidden");
+                }
+            }
+        </script>
+    </body>
+
+</html>

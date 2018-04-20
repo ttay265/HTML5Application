@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<class slot="4" id="SE1111">
+    <seats>
+        <row id="A">
+            <seat id="1">
+                <student  status="absent" id="SE62106" name="tuannqse62106">
+                    Ngô Quốc Tuấn
+                </student>
+            </seat>
+            <seat id="2">
+                <student  status="absent" id="SE6210a" name="anvse6210a">
+                    Nguyễn Văn A
+                </student>
+            </seat>
+            <seat id="3">
+                <student  status="absent" id="SE6210b" name="bncse6210b">
+                    Nguyễn Văn B
+                </student>
+            </seat>
+            <seat id="4">
+                <student  status="absent" id="SE6210c" name="cnvse6210c">
+                    Nguyễn Văn C
+                </student>
+            </seat>
+            <seat id="5">
+                <student  status="absent" id="SE6210d" name="dnvse6210d">
+                    Nguyễn Văn D
+                </student>
+            </seat>
+            <seat id="6">
+                <student  status="absent" id="SE6210e" name="dnvse6210d">
+                    Nguyễn Văn D
+                </student>
+            </seat>
+        </row>
+        <row id="B">
+            <seat id="1">
+                <student  status="absent" id="SE62106" name="tuannqse62106">
+                    Ngô Quốc Tuấn
+                </student>
+            </seat>
+            <seat id="2">
+                <student  status="absent" id="SE6210a" name="anvse6210a">
+                    Nguyễn Văn A
+                </student>
+            </seat>
+            <seat id="3">
+                <student  status="absent" id="SE6210b" name="bncse6210b">
+                    Nguyễn Văn B
+                </student>
+            </seat>
+            <seat id="4">
+                <student  status="absent" id="SE6210c" name="cnvse6210c">
+                    Nguyễn Văn C
+                </student>
+            </seat>
+            <seat id="5">
+                <student  status="absent" id="SE6210d" name="dnvse6210d">
+                    Nguyễn Văn D
+                </student>
+            </seat>
+            <seat id="6">
+                <student  status="absent" id="SE6210e" name="dnvse6210d">
+                    Nguyễn Văn D
+                </student>
+            </seat>
+        </row>
+        <row id="C">
+            <seat id="1">
+                <student  status="absent" id="SE62106" name="tuannqse62106">
+                    Ngô Quốc Tuấn
+                </student>
+            </seat>
+            <seat id="2">
+                <student  status="absent" id="SE6210a" name="anvse6210a">
+                    Nguyễn Văn A
+                </student>
+            </seat>
+            <seat id="3">
+                <student  status="absent" id="SE6210b" name="bncse6210b">
+                    Nguyễn Văn B
+                </student>
+            </seat>
+            <seat id="4">
+                <student  status="absent" id="SE6210c" name="cnvse6210c">
+                    Nguyễn Văn C
+                </student>
+            </seat>
+            <seat id="5">
+                <student  status="absent" id="SE6210d" name="dnvse6210d">
+                    Nguyễn Văn D
+                </student>
+            </seat>
+            <seat id="6">
+                <student  status="absent" id="SE6210e" name="dnvse6210d">
+                    Nguyễn Văn D
+                </student>
+            </seat>
+        </row>
+        <row id="D">
+            <seat id="1">
+                    
+            </seat>
+            <seat id="2">
+                  
+            </seat>
+            <seat id="3">
+                   
+            </seat>
+            <seat id="4">
+                   
+            </seat>
+            <seat id="5">
+                   
+            </seat>
+            <seat id="6">
+                   
+            </seat>
+        </row>
+    </seats>
+</class>
